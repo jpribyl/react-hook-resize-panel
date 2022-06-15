@@ -1,6 +1,6 @@
 {
   "name": "react-hook-resize-panel",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Lightweight, strongly typed resizable panel component using react hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -35,8 +35,10 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.0.1",
+    "@types/react": "^18.0.12",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
+    "create-react-app": "^5.0.1",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest-dom": "^4.0.1",
@@ -51,9 +53,6 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "testing-library": "^0.0.2",
-    "@types/react": "^18.0.12",
-    "create-react-app": "^5.0.1",
-    "react-draggable": "^4.4.5",
     "typescript": "^4.7.3"
   },
   "bugs": {
@@ -63,5 +62,8 @@
   "directories": {
     "example": "example",
     "lib": "lib"
+  },
+  "dependencies": {
+    "react-draggable": "^4.4.5"
   }
 }
