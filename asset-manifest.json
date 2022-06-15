@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-hook-resize-panel/static/css/main.580255ac.css",
+    "main.js": "/react-hook-resize-panel/static/js/main.74a100fe.js",
+    "index.html": "/react-hook-resize-panel/index.html",
+    "main.580255ac.css.map": "/react-hook-resize-panel/static/css/main.580255ac.css.map",
+    "main.74a100fe.js.map": "/react-hook-resize-panel/static/js/main.74a100fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.580255ac.css",
+    "static/js/main.74a100fe.js"
+  ]
+}
