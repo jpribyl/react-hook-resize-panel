@@ -1,1 +1,6 @@
-export { ResizePanel, HandleLeft, HandleRight, Content } from "./resize-panel";
+export {
+  ResizePanel,
+  ResizeHandleLeft,
+  ResizeHandleRight,
+  ResizeContent,
+} from "./resize-panel";

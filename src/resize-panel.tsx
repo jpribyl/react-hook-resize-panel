@@ -25,7 +25,7 @@ export function ResizePanel({ children, initialWidth }: ResizePanelProps) {
   );
 }
 
-export function HandleRight(props: ComponentProps<typeof DraggableCore>) {
+export function ResizeHandleRight(props: ComponentProps<typeof DraggableCore>) {
   const { setWidth } = useContext(ReactContextResizePanel);
   return (
     <DraggableCore
@@ -38,7 +38,7 @@ export function HandleRight(props: ComponentProps<typeof DraggableCore>) {
     />
   );
 }
-export function HandleLeft(props: ComponentProps<typeof DraggableCore>) {
+export function ResizeHandleLeft(props: ComponentProps<typeof DraggableCore>) {
   const { setWidth } = useContext(ReactContextResizePanel);
   return (
     <DraggableCore
@@ -51,7 +51,10 @@ export function HandleLeft(props: ComponentProps<typeof DraggableCore>) {
     />
   );
 }
-export function Content({ style, ...props }: HTMLAttributes<HTMLDivElement>) {
+export function ResizeContent({
+  style,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) {
   const { width } = useContext(ReactContextResizePanel);
   return <div style={{ ...style, width }} {...props} />;
 }

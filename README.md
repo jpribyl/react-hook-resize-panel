@@ -23,9 +23,9 @@ yarn add react-hook-resize-panel
 
 ```jsx
 import {
-  Content,
-  HandleLeft,
-  HandleRight,
+  ResizeContent,
+  randleLeft,
+  ResizeHandleRight,
   ResizePanel,
 } from "react-hook-resize-panel";
 
@@ -33,8 +33,8 @@ export default function App() {
   return (
     <div style={{ flexFlow: "row nowrap", flexGrow: 1, display: "flex" }}>
       <ResizePanel initialWidth={300}>
-        <Content style={{ backgroundColor: "#283430" }} />
-        <HandleRight>
+        <ResizeContent style={{ backgroundColor: "#283430" }} />
+        <ResizeHandleRight>
           <div
             style={{
               cursor: "col-resize",
@@ -42,13 +42,13 @@ export default function App() {
               backgroundColor: "black",
             }}
           />
-        </HandleRight>
+        </ResizeHandleRight>
       </ResizePanel>
 
       <div style={{ flexGrow: 1, backgroundColor: "#34282c" }} />
 
       <ResizePanel initialWidth={300}>
-        <HandleLeft>
+        <ResizeHandleLeft>
           <div
             style={{
               cursor: "col-resize",
@@ -56,8 +56,8 @@ export default function App() {
               backgroundColor: "black",
             }}
           />
-        </HandleLeft>
-        <Content style={{ backgroundColor: "#283430" }} />
+        </ResizeHandleLeft>
+        <ResizeContent style={{ backgroundColor: "#283430" }} />
       </ResizePanel>
       <div />
     </div>
@@ -74,19 +74,19 @@ export default function App() {
 - Sets initial width of panel
 - Does not currently support responsive / percentage values
 
-### `Content` props:
+### `ResizeContent` props:
 
 - Will patch panel's `width` into `style` prop
 - Passes all props directly into a `<div/>`
 
-### `HandleRight` props:
+### `ResizeHandleRight` props:
 
-- Will shrink `<Content/>` when dragged to the left and grow `<Content/>` when dragged to the right
+- Will shrink `<ResizeContent/>` when dragged to the left and grow `<ResizeContent/>` when dragged to the right
 - Passed directly to `react-draggable`'s `DraggableCore` component
 - See docs here for valid options: [DraggableCore](https://github.com/react-grid-layout/react-draggable#draggablecore)
 
-### `HandleLeft` props:
+### `ResizeHandleLeft` props:
 
-- Will shrink `<Content/>` when dragged to the right and grow `<Content/>` when dragged to the left
+- Will shrink `<ResizeContent/>` when dragged to the right and grow `<ResizeContent/>` when dragged to the left
 - Passed directly to `react-draggable`'s `DraggableCore` component
 - See docs here for valid options: [DraggableCore](https://github.com/react-grid-layout/react-draggable#draggablecore)

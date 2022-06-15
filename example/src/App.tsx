@@ -1,7 +1,7 @@
 import {
-  Content,
-  HandleLeft,
-  HandleRight,
+  ResizeContent,
+  ResizeHandleLeft,
+  ResizeHandleRight,
   ResizePanel,
 } from "react-hook-resize-panel";
 
@@ -14,8 +14,8 @@ export default function App() {
 
       <div style={{ flexFlow: "row nowrap", flexGrow: 1, display: "flex" }}>
         <ResizePanel initialWidth={300}>
-          <Content style={{ backgroundColor: "#283430" }} />
-          <HandleRight>
+          <ResizeContent style={{ backgroundColor: "#283430" }} />
+          <ResizeHandleRight>
             <div
               style={{
                 cursor: "col-resize",
@@ -23,13 +23,13 @@ export default function App() {
                 backgroundColor: "black",
               }}
             />
-          </HandleRight>
+          </ResizeHandleRight>
         </ResizePanel>
 
         <div style={{ flexGrow: 1, backgroundColor: "#34282c" }} />
 
         <ResizePanel initialWidth={300}>
-          <HandleLeft>
+          <ResizeHandleLeft>
             <div
               style={{
                 cursor: "col-resize",
@@ -37,8 +37,8 @@ export default function App() {
                 backgroundColor: "black",
               }}
             />
-          </HandleLeft>
-          <Content style={{ backgroundColor: "#283430" }} />
+          </ResizeHandleLeft>
+          <ResizeContent style={{ backgroundColor: "#283430" }} />
         </ResizePanel>
         <div />
       </div>
