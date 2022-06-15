@@ -1,6 +1,6 @@
 {
   "name": "react-hook-resize-panel",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Lightweight, strongly typed resizable panel component using react hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -50,9 +50,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "testing-library": "^0.0.2"
-  },
-  "dependencies": {
+    "testing-library": "^0.0.2",
     "@types/react": "^18.0.12",
     "create-react-app": "^5.0.1",
     "react-draggable": "^4.4.5",
