@@ -3,3 +3,4 @@ lib/*.test.js
 lib/*.test.d.ts
 src
 example
+demo.gif
