@@ -1,0 +1,69 @@
+{
+  "name": "react-hook-resize-panel",
+  "version": "1.0.0",
+  "description": "Lightweight, strongly typed resizable panel component using react hooks",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest src",
+    "lint": "eslint",
+    "build": "rm -rf ./lib && tsc",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpribyl/react-hook-resize-panel.git"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "hooks",
+    "resizable",
+    "panel",
+    "split",
+    "drag",
+    "resize"
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom"
+  },
+  "author": "jpribyl",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-testing-library": "^5.2.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "testing-library": "^0.0.2"
+  },
+  "dependencies": {
+    "@types/react": "^18.0.12",
+    "create-react-app": "^5.0.1",
+    "react-draggable": "^4.4.5",
+    "typescript": "^4.7.3"
+  },
+  "bugs": {
+    "url": "https://github.com/jpribyl/react-hook-resize-panel/issues"
+  },
+  "homepage": "https://github.com/jpribyl/react-hook-resize-panel#readme",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  }
+}
