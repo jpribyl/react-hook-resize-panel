@@ -1,60 +1,9 @@
-import React, {
-  ComponentProps,
-  createContext,
-  Dispatch,
-  HTMLAttributes,
-  ReactNode,
-  SetStateAction,
-  useContext,
-  useState,
-} from "react";
-import { DraggableCore } from "react-draggable";
-
-type ContextType = {
-  width: number;
-  setWidth: Dispatch<SetStateAction<number>>;
-};
-const ReactContextResizePanel = createContext<ContextType>(undefined!);
-type ResizePanelProps = { children: ReactNode; initialWidth: number };
-function ResizePanel({ children, initialWidth }: ResizePanelProps) {
-  const [width, setWidth] = useState(initialWidth);
-  return (
-    <ReactContextResizePanel.Provider value={{ width, setWidth }}>
-      {children}
-    </ReactContextResizePanel.Provider>
-  );
-}
-
-function HandleRight(props: ComponentProps<typeof DraggableCore>) {
-  const { setWidth } = useContext(ReactContextResizePanel);
-  return (
-    <DraggableCore
-      onDrag={(_, ui) => {
-        window.getSelection()?.removeAllRanges();
-        const { deltaX } = ui;
-        setWidth((current) =>  current + deltaX);
-      }}
-      {...props}
-    />
-  );
-}
-function HandleLeft(props: ComponentProps<typeof DraggableCore>) {
-  const { setWidth } = useContext(ReactContextResizePanel);
-  return (
-    <DraggableCore
-      onDrag={(_, ui) => {
-        window.getSelection()?.removeAllRanges();
-        const { deltaX } = ui;
-        setWidth((current) => current - deltaX);
-      }}
-      {...props}
-    />
-  );
-}
-function Content({ style, ...props }: HTMLAttributes<HTMLDivElement>) {
-  const { width } = useContext(ReactContextResizePanel);
-  return <div style={{ ...style, width }} {...props} />;
-}
+import {
+  Content,
+  HandleLeft,
+  HandleRight,
+  ResizePanel,
+} from "react-hook-resize-panel";
 
 export default function App() {
   return (
@@ -92,7 +41,6 @@ export default function App() {
           <Content style={{ backgroundColor: "#283430" }} />
         </ResizePanel>
         <div />
-
       </div>
       <a
         className="external-links"
