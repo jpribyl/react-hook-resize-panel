@@ -64,9 +64,9 @@ export function ResizeHandleLeft(props: ComponentProps<typeof DraggableCore>) {
         window.getSelection()?.removeAllRanges();
         const { deltaX } = ui;
         if (deltaX < 0) {
-          setWidth((current) => Math.max(current - deltaX, minWidth));
+          setWidth((current) => Math.min(current - deltaX, minWidth));
         } else {
-          setWidth((current) => Math.min(current - deltaX, maxWidth));
+          setWidth((current) => Math.max(current - deltaX, maxWidth));
         }
       }}
       {...props}
