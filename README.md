@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/react-hook-mathjax.svg)](https://badge.fury.io/js/react-hook-mathjax)
 
-Dead simple resizable panel- only 60 lines of code. Lightweight, strongly typed
+Dead simple resizable panel- only 90 lines of code. Lightweight, strongly typed
 package with almost no dependencies. It uses React Grid Layout and React Hooks
 to construct a resizable panel. For more details, take a look at the [example
 project](https://github.com/jpribyl/react-hook-resize-panel/tree/master/example)
