@@ -1,6 +1,6 @@
 {
   "name": "react-hook-resize-panel",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Lightweight, strongly typed resizable panel component using react hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
