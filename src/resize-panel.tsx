@@ -6,6 +6,7 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
+  useRef,
   useState,
 } from "react";
 import { DraggableCore, DraggableData } from "react-draggable";
@@ -54,8 +55,11 @@ function handleOverflow({ ui, currentWidth, nextWidth }: HandleOverflowParams) {
 }
 export function ResizeHandleRight(props: ComponentProps<typeof DraggableCore>) {
   const { setWidth, minWidth, maxWidth } = useContext(ReactContextResizePanel);
+  // https://github.com/react-grid-layout/react-draggable/blob/v4.4.2/lib/DraggableCore.js#L159-L171
+  const nodeRef = useRef(null);
   return (
     <DraggableCore
+      nodeRef={nodeRef}
       onDrag={(_, ui) => {
         window.getSelection()?.removeAllRanges();
         const { deltaX } = ui;
@@ -74,8 +78,11 @@ export function ResizeHandleRight(props: ComponentProps<typeof DraggableCore>) {
 }
 export function ResizeHandleLeft(props: ComponentProps<typeof DraggableCore>) {
   const { setWidth, minWidth, maxWidth } = useContext(ReactContextResizePanel);
+  // https://github.com/react-grid-layout/react-draggable/blob/v4.4.2/lib/DraggableCore.js#L159-L171
+  const nodeRef = useRef(null);
   return (
     <DraggableCore
+      nodeRef={nodeRef}
       onDrag={(_, ui) => {
         window.getSelection()?.removeAllRanges();
         const { deltaX } = ui;
