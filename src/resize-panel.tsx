@@ -1,7 +1,9 @@
+/* eslint-disable react/display-name */
 import {
   ComponentProps,
   createContext,
   Dispatch,
+  forwardRef,
   HTMLAttributes,
   ReactNode,
   SetStateAction,
@@ -40,6 +42,11 @@ export function ResizePanel({
   );
 }
 
+// https://github.com/react-grid-layout/react-draggable/blob/v4.4.2/lib/DraggableCore.js#L159-L171
+const Handle = forwardRef<HTMLDivElement, any>((props, ref) => (
+  <div ref={ref} {...props} />
+));
+
 type HandleOverflowParams = {
   ui: DraggableData;
   currentWidth: number;
@@ -53,10 +60,9 @@ function handleOverflow({ ui, currentWidth, nextWidth }: HandleOverflowParams) {
   if (clientWidth - nextScrollWidth < 0) return currentWidth - overflow;
   return nextWidth;
 }
-export function ResizeHandleRight(props: ComponentProps<typeof DraggableCore>) {
+export function ResizeHandleRight(props: ComponentProps<"div">) {
   const { setWidth, minWidth, maxWidth } = useContext(ReactContextResizePanel);
-  // https://github.com/react-grid-layout/react-draggable/blob/v4.4.2/lib/DraggableCore.js#L159-L171
-  const nodeRef = useRef(null);
+  const nodeRef: any = useRef<HTMLDivElement>(null);
   return (
     <DraggableCore
       nodeRef={nodeRef}
@@ -72,14 +78,14 @@ export function ResizeHandleRight(props: ComponentProps<typeof DraggableCore>) {
           });
         }
       }}
-      {...props}
-    />
+    >
+      <Handle ref={nodeRef} {...props} />
+    </DraggableCore>
   );
 }
 export function ResizeHandleLeft(props: ComponentProps<typeof DraggableCore>) {
   const { setWidth, minWidth, maxWidth } = useContext(ReactContextResizePanel);
-  // https://github.com/react-grid-layout/react-draggable/blob/v4.4.2/lib/DraggableCore.js#L159-L171
-  const nodeRef = useRef(null);
+  const nodeRef: any = useRef<HTMLDivElement>(null);
   return (
     <DraggableCore
       nodeRef={nodeRef}
@@ -95,8 +101,9 @@ export function ResizeHandleLeft(props: ComponentProps<typeof DraggableCore>) {
           setWidth((currentWidth) => Math.max(currentWidth - deltaX, minWidth));
         }
       }}
-      {...props}
-    />
+    >
+      <Handle ref={nodeRef} {...props} />
+    </DraggableCore>
   );
 }
 export function ResizeContent({
