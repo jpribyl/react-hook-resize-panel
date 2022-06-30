@@ -83,7 +83,7 @@ export function ResizeHandleRight(props: ComponentProps<"div">) {
     </DraggableCore>
   );
 }
-export function ResizeHandleLeft(props: ComponentProps<typeof DraggableCore>) {
+export function ResizeHandleLeft(props: ComponentProps<"div">) {
   const { setWidth, minWidth, maxWidth } = useContext(ReactContextResizePanel);
   const nodeRef: any = useRef<HTMLDivElement>(null);
   return (
